@@ -1,5 +1,5 @@
 {
-  "name": "nodecg-react-vite-template",
+  "name": "smtrta-layouts",
   "version": "1.0.0",
   "scripts": {
     "autofix": "run-s autofix:*",

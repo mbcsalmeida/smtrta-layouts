@@ -22,6 +22,11 @@
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
 		"isolatedModules": true,
-		"baseUrl": "."
+		"baseUrl": ".",
+		"paths": {
+			"speedcontrol/*": [
+				"../../bundles/nodecg-speedcontrol/*"
+			]
+		}
 	}
 }
