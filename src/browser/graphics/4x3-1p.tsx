@@ -1,0 +1,76 @@
+import { render } from '../render';
+import layoutBg from './img/4x3-1p.png';
+import layoutBgCommentary from './img/4x3-1p-commentary.png';
+import { ThemeProvider, Game, Category, Estimate, Timer, Player } from './components';
+import styled from '@emotion/styled';
+import useCommentators from '../hooks/useCommentators';
+
+const LayoutContainer = styled.div<{ hasCommentators: boolean }>`
+  background-image: url(${(props) => (props.hasCommentators ? layoutBgCommentary : layoutBg)});
+  margin: 0;
+  padding: 0;
+  width: 1920px;
+  height: 1080px;
+`;
+
+const GameLayout = () => {
+  const commentators = useCommentators();
+
+  return (
+    <ThemeProvider>
+      <LayoutContainer hasCommentators={commentators.length > 0}>
+        <Game
+          style={{
+            position: 'fixed',
+            left: '82.5px',
+            width: '350px',
+            height: '60px',
+            top: '350px',
+          }}
+          maxSize={32}
+        />
+        <Category
+          style={{
+            position: 'fixed',
+            left: '82.5px',
+            width: '350px',
+            height: '60px',
+            top: '465px',
+          }}
+          maxSize={32}
+        />
+        <Estimate
+          style={{
+            position: 'fixed',
+            left: '82.5px',
+            width: '350px',
+            height: '60px',
+            top: '578px',
+          }}
+        />
+        <Timer
+          style={{
+            position: 'fixed',
+            left: '82.5px',
+            width: '350px',
+            height: '60px',
+            top: '693px',
+          }}
+        />
+        <Player
+          style={{
+            position: 'fixed',
+            left: '252px',
+            width: '260px',
+            height: '40px',
+            top: '887px',
+            fontSize: '28px',
+          }}
+          slot={0}
+        />
+      </LayoutContainer>
+    </ThemeProvider>
+  );
+};
+
+render(<GameLayout />);

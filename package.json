@@ -24,11 +24,12 @@
     "@fontsource/roboto": "^5.0.3",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.4",
+    "@nodecg/react-hooks": "^1.0.3",
+    "auto-text-size": "github:hoXyy/auto-text-size",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "6.0.0-rc.3",
-    "use-nodecg": "0.4.1-2"
+    "styled-components": "6.0.0-rc.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.12.0",
@@ -48,6 +49,7 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc-eb3ad065-20240822",
     "eslint-plugin-react-refresh": "^0.4.12",
     "get-port": "^7.0.0",
+    "globals": "^15.10.0",
     "globby": "^13.1.4",
     "nodecg-cli": "^8.6.6",
     "npm-run-all": "^4.1.5",
@@ -71,7 +73,27 @@
     ],
     "graphics": [
       {
-        "file": "example.html",
+        "file": "intermission.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "3ds.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "3x2-1p.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "4x3-1p.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "16x9-1p.html",
         "width": 1920,
         "height": 1080
       }

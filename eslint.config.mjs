@@ -1,25 +1,23 @@
-// @ts-check
-
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import reactPlugin from 'eslint-plugin-react';
+import globals from "globals";
+import pluginJs from "@eslint/js";
+import tseslint from "typescript-eslint";
+import pluginReact from "eslint-plugin-react";
 import hooksPlugin from 'eslint-plugin-react-hooks';
-import reactRefresh from "eslint-plugin-react-refresh";
 
 export default [
-    eslint.configs.recommended,
-    tseslint.configs.recommended,
-    reactPlugin.configs.flat.recommended,
-    reactPlugin.configs.flat['jsx-runtime'],
-    {
-        plugins: {
-            "react-hooks": hooksPlugin,
-            "react-refresh": reactRefresh,
-        },
-        rules:
-        {
-            ...hooksPlugin.configs.recommended.rules,
-            "react-refresh/only-export-components": "warn",
-        },
+  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
+  { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+  pluginReact.configs.flat.recommended,
+  pluginReact.configs.flat['jsx-runtime'],
+  {
+    plugins: {
+      "react-hooks": hooksPlugin,
     },
+    rules:
+    {
+      ...hooksPlugin.configs.recommended.rules,
+    },
+  },
 ];

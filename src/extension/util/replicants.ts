@@ -2,4 +2,4 @@ import { get } from './nodecg';
 
 const nodecg = get();
 
-export const exampleReplicant = nodecg.Replicant('exampleReplicant');
+export const commentators = nodecg.Replicant<string>('commentators');
