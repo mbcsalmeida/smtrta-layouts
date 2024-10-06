@@ -4,6 +4,7 @@ import layoutBgCommentary from './img/3x2-1p-commentary.png';
 import { ThemeProvider, Game, Category, Estimate, Timer, Player } from './components';
 import styled from '@emotion/styled';
 import useCommentators from '../hooks/useCommentators';
+import { useMemo } from 'react';
 
 const LayoutContainer = styled.div<{ hasCommentators: boolean }>`
   background-image: url(${(props) => (props.hasCommentators ? layoutBgCommentary : layoutBg)});
@@ -15,7 +16,7 @@ const LayoutContainer = styled.div<{ hasCommentators: boolean }>`
 
 const GameLayout = () => {
   const commentators = useCommentators();
-  const hasCommentators = commentators.length > 0;
+  const hasCommentators = useMemo(() => commentators.length > 0, [commentators]);
 
   return (
     <ThemeProvider>

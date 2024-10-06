@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import { CSSProperties, useMemo } from 'react';
 import useCurrentRun from '../../hooks/useCurrentRun';
 import { AutoTextSize } from 'auto-text-size';
 
@@ -9,10 +9,11 @@ type GameProps = {
 
 export const Game = ({ maxSize, style }: GameProps) => {
   const currentRun = useCurrentRun();
+  const game = useMemo(() => currentRun?.game, [currentRun]);
 
   return (
     <div>
-      {currentRun && currentRun.game && (
+      {game && (
         <div
           style={{
             display: 'flex',
@@ -23,7 +24,7 @@ export const Game = ({ maxSize, style }: GameProps) => {
             className="shadow"
             style={{ marginLeft: 'auto', marginRight: 'auto', alignSelf: 'center' }}
             maxFontSizePx={maxSize}>
-            {currentRun.game}
+            {game}
           </AutoTextSize>
         </div>
       )}

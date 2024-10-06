@@ -9,7 +9,7 @@ export default defineConfig({
     react(),
     checker({ typescript: { tsconfigPath: './tsconfig.browser.json' } }),
     nodecg({
-      bundleName: 'nodecg-react-vite-template',
+      bundleName: 'smtrta-layouts',
       graphics: './src/browser/graphics/*.tsx',
       dashboard: './src/browser/dashboard/*.tsx',
     }),
