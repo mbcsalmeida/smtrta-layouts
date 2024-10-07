@@ -3,9 +3,56 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "exampleProperty": {
-      "type": "string"
+    "obs": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "url": {
+          "type": "string",
+          "default": "wss://localhost:4455"
+        },
+        "password": {
+          "type": "string"
+        },
+        "scenes": {
+          "type": "object",
+          "properties": {
+            "intermission": {
+              "type": "string",
+              "default": "Intermission"
+            }
+          },
+          "additionalProperties": false
+        },
+        "sources": {
+          "type": "object",
+          "properties": {
+            "stream_1": {
+              "type": "string",
+              "default": "Stream 1"
+            },
+            "stream_2": {
+              "type": "string",
+              "default": "Stream 2"
+            },
+            "stream_3": {
+              "type": "string",
+              "default": "Stream 3"
+            },
+            "stream_4": {
+              "type": "string",
+              "default": "Stream 4"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false,
+      "required": ["enabled"]
     }
   },
-  "required": ["exampleProperty"]
+  "required": ["obs"]
 }

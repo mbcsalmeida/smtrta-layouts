@@ -18,6 +18,7 @@ export default [
     rules:
     {
       ...hooksPlugin.configs.recommended.rules,
+      '@typescript-eslint/no-require-imports': 'off'
     },
   },
 ];
