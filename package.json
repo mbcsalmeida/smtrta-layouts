@@ -66,9 +66,9 @@
     "compatibleRange": "^1.8.1 || ^2.0.0",
     "dashboardPanels": [
       {
-        "file": "example.html",
-        "name": "example",
-        "title": "Example",
+        "file": "next-run.html",
+        "name": "next-run",
+        "title": "Switch to next run",
         "width": 2
       }
     ],

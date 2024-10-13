@@ -12,5 +12,5 @@ export const DashboardThemeProvider = ({ children }: Props) => {
     },
   });
 
-  return <ThemeProvider theme={theme} children={children}></ThemeProvider>;
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };

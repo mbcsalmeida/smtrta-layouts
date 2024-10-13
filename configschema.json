@@ -12,7 +12,7 @@
         },
         "url": {
           "type": "string",
-          "default": "wss://localhost:4455"
+          "default": "ws://localhost:4455"
         },
         "password": {
           "type": "string"

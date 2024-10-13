@@ -10,13 +10,17 @@ export class OBSUtility extends obsWebsocketJs {
   connected = false;
   currentScene = '';
   private currentSceneReplicant = currentOBSScene;
-  private log = new TaggedLogger('obs');
+  log = new TaggedLogger('obs');
 
   constructor() {
     super();
 
     this.currentSceneReplicant.on('change', (newVal) => {
       this.currentScene = newVal ?? '';
+    });
+
+    this.on('ConnectionClosed', () => {
+      this.connected = false;
     });
 
     this.on('CurrentProgramSceneChanged', (data) => {

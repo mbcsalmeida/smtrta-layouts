@@ -8,6 +8,11 @@ const config = nodecg.bundleConfig.obs;
 if (config.enabled) {
   obs.connectToOBS();
 
+  obs.on('ConnectionClosed', () => {
+    obs.log.warn('Disconnected from OBS! Attempting to reconnect in 5 seconds...');
+    setTimeout(() => obs.connectToOBS(), 5000);
+  });
+
   nodecg.listenFor('switchToIntermission', async () => {
     if (obs.currentScene === config.scenes!.intermission) return; // if we're already on intermission, don't do anything
 
