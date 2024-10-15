@@ -26,28 +26,6 @@
             }
           },
           "additionalProperties": false
-        },
-        "sources": {
-          "type": "object",
-          "properties": {
-            "stream_1": {
-              "type": "string",
-              "default": "Stream 1"
-            },
-            "stream_2": {
-              "type": "string",
-              "default": "Stream 2"
-            },
-            "stream_3": {
-              "type": "string",
-              "default": "Stream 3"
-            },
-            "stream_4": {
-              "type": "string",
-              "default": "Stream 4"
-            }
-          },
-          "additionalProperties": false
         }
       },
       "additionalProperties": false,

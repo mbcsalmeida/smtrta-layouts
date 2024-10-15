@@ -13,11 +13,5 @@ export interface Configschema {
 		scenes?: {
 			intermission?: string;
 		};
-		sources?: {
-			stream_1?: string;
-			stream_2?: string;
-			stream_3?: string;
-			stream_4?: string;
-		};
 	};
 }
