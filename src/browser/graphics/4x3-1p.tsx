@@ -1,7 +1,7 @@
 import { render } from '../render';
 import layoutBg from './img/4x3-1p.png';
 import layoutBgCommentary from './img/4x3-1p-commentary.png';
-import { ThemeProvider, Game, Category, Estimate, Timer, Player } from './components';
+import { ThemeProvider, Game, Category, Estimate, Timer, Player, Commentators } from './components';
 import styled from '@emotion/styled';
 import useCommentators from '../hooks/useCommentators';
 import { useMemo } from 'react';
@@ -69,6 +69,16 @@ const GameLayout = () => {
             fontSize: '28px',
           }}
           slot={0}
+        />
+        <Commentators
+          style={{
+            position: 'fixed',
+            left: '262px',
+            width: '250px',
+            height: '40px',
+            top: '954px',
+            fontSize: '28px',
+          }}
         />
       </LayoutContainer>
     </ThemeProvider>

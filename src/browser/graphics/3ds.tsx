@@ -1,7 +1,7 @@
 import { render } from '../render';
 import layoutBg from './img/3ds.png';
 import layoutBgCommentary from './img/3ds-commentary.png';
-import { ThemeProvider, Game, Category, Estimate, Timer, Player } from './components';
+import { ThemeProvider, Game, Category, Estimate, Timer, Player, Commentators } from './components';
 import styled from '@emotion/styled';
 import useCommentators from '../hooks/useCommentators';
 import { useMemo } from 'react';
@@ -69,6 +69,16 @@ const GameLayout = () => {
             fontSize: '24px',
           }}
           slot={0}
+        />
+        <Commentators
+          style={{
+            position: 'fixed',
+            left: '195px',
+            width: '230px',
+            height: '40px',
+            top: '924px',
+            fontSize: '24px',
+          }}
         />
       </LayoutContainer>
     </ThemeProvider>

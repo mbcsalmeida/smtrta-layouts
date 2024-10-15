@@ -70,6 +70,12 @@
         "name": "next-run",
         "title": "Switch to next run",
         "width": 2
+      },
+      {
+        "file": "commentators.html",
+        "name": "commentators",
+        "title": "Commentators",
+        "width": 3
       }
     ],
     "graphics": [
