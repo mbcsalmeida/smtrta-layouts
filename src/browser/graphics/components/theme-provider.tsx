@@ -12,7 +12,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
             overflow: hidden;
             color: white;
             font-weight: bold;
-            font-family: 'Noto Sans JP';
+            font-family: 'Noto Serif JP';
           }
 
           .shadow {
