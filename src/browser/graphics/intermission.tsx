@@ -57,13 +57,10 @@ const MusicText = styled.h2`
   font-size: 33px;
 `
 
-function MultipleRunners(props){
+function MultipleRunners(props: { teams: Array<{ players: Array<{ name: string }> }> }){
   const teams = props.teams;
-  const names = [];
-  const name = teams.map((team) => (
-    names.push(team.players[0].name)
-  ))
-    return names.join(" vs ");
+  const names = teams.map((team) => team.players[0]?.name || 'Unknown').filter(Boolean);
+  return names.join(" vs ");
 }
 
 const Intermission = () => {
