@@ -21,52 +21,60 @@ const GameLayout = () => {
   return (
     <ThemeProvider>
       <LayoutContainer hasCommentators={hasCommentators}>
+        <div style={{
+          width: '330px',
+          height: '40px',
+        }}>
         <Game
           style={{
             position: 'fixed',
-            left: '608.5px',
-            width: '330px',
-            height: '60px',
-            bottom: '180px',
+            right: '515px',
+            top: '760px',
+            fontSize: '36px',
           }}
-          maxSize={32}
+          maxSize={48}
         />
+        </div>
+        
         <Category
           style={{
             position: 'fixed',
-            left: '608.5px',
-            width: '330px',
-            height: '60px',
-            bottom: '60px',
+            right: '50.5px',
+            width: '230px',
+            height: '40px',
+            top: '760px',
+            fontSize: '48px',
           }}
           maxSize={32}
         />
         <Estimate
           style={{
             position: 'fixed',
-            right: '607.5px',
-            width: '330px',
-            height: '60px',
-            bottom: '180px',
+            right: '515px',
+            width: '230px',
+            height: '40px',
+            top: '935px',
+            fontSize: '48px',
           }}
         />
         <Timer
           style={{
             position: 'fixed',
-            right: '607.5px',
-            width: '330px',
-            height: '60px',
-            bottom: '60px',
+            right: '50.5px',
+            width: '230px',
+            height: '40px',
+            top: '935px',
+            fontSize: '48px',
           }}
         />
         <Player
           style={{
             position: 'fixed',
-            left: '195px',
-            width: '240px',
+            left: '190px',
+            width: '230px',
             height: '40px',
-            top: '852px',
-            fontSize: '24px',
+            top: '760px',
+            fontSize: '36px',
           }}
           slot={0}
         />
@@ -76,8 +84,8 @@ const GameLayout = () => {
             left: '195px',
             width: '230px',
             height: '40px',
-            top: '924px',
-            fontSize: '24px',
+            top: '935px',
+            fontSize: '36px',
           }}
         />
       </LayoutContainer>
