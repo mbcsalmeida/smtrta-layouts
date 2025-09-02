@@ -1,6 +1,5 @@
 import { CSSProperties } from 'react';
 import useCurrentRun from '../../hooks/useCurrentRun';
-import { AutoTextSize } from 'auto-text-size';
 
 type CategoryProps = {
   style?: CSSProperties;
@@ -19,12 +18,11 @@ export const Category = ({ maxSize, style }: CategoryProps) => {
             textAlign: 'center',
             ...style,
           }}>
-          <AutoTextSize
+          <div
             className="shadow"
-            style={{ marginLeft: 'auto', marginRight: 'auto', alignSelf: 'center' }}
-            maxFontSizePx={maxSize}>
+            style={{ marginLeft: 'auto', marginRight: 'auto', alignSelf: 'center' }}>
             {currentRun.category}
-          </AutoTextSize>
+          </div>
         </div>
       )}
     </div>

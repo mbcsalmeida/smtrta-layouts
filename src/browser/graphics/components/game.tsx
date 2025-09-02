@@ -1,6 +1,5 @@
 import { CSSProperties, useMemo } from 'react';
 import useCurrentRun from '../../hooks/useCurrentRun';
-import { AutoTextSize } from 'auto-text-size';
 
 type GameProps = {
   style?: CSSProperties;

@@ -18,5 +18,6 @@ if (config.enabled) {
 
     await obs.changeToIntermission();
     nodecg.sendMessageToBundle('changeToNextRun', 'nodecg-speedcontrol');
+    nodecg.sendMessageToBundle('playbackStart', 'nodecg-foobar2000-controller');
   });
 }

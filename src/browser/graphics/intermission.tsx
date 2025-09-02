@@ -2,7 +2,6 @@ import { render } from '../render';
 import intermissionBg from './img/intermission.png';
 import useCurrentRun from '../hooks/useCurrentRun';
 import styled from '@emotion/styled';
-import { AutoTextSize } from 'auto-text-size';
 import { ThemeProvider } from './components';
 import useNextRun from '../hooks/useNextRun';
 
@@ -50,13 +49,6 @@ const HeaderText = styled.h2<{ $distance: number }>`
   font-size: 36px;
 `
 
-const MusicText = styled.h2`
-  position: fixed;
-  left: 190px;
-  top: 560px;
-  font-size: 33px;
-`
-
 function MultipleRunners(props: { teams: Array<{ players: Array<{ name: string }> }> }){
   const teams = props.teams;
   const names = teams.map((team) => team.players[0]?.name || 'Unknown').filter(Boolean);
@@ -74,12 +66,16 @@ const Intermission = () => {
           <HeaderText $distance={128} className='shadow'>Coming Up</HeaderText>
           {currentRun && (
             <IntermissionCurrentRunInfo>
-              <AutoTextSize
-                mode="box"
+              <div
                 className="shadow"
-                maxFontSizePx={48}>
+                style={{
+                  fontSize: '40px',
+            overflowWrap:"break-word",
+            inlineSize: "600px",
+            marginTop: "10px"
+                }}>
                 {currentRun.game}
-              </AutoTextSize>
+              </div>
               <span
                 className="shadow"
                 style={{
@@ -105,12 +101,17 @@ const Intermission = () => {
             <>
               <HeaderText $distance={460} className='shadow'>On Deck</HeaderText>
               <IntermissionNextRunInfo>
-                <AutoTextSize
-                  mode="box"
-                  className="shadow"
-                  maxFontSizePx={40}>
+              <div
+                className="shadow"
+                style={{
+                  fontSize: '34px',
+            overflowWrap:"break-word",
+            inlineSize: "600px",
+            marginTop: "10px"
+                }}>
+                
                   {nextRun.game}
-                </AutoTextSize>
+                </div>
                 <span
                   className="shadow"
                   style={{

@@ -1,6 +1,6 @@
 import { render } from '../render';
-import layoutBg from './img/3ds.png';
-import layoutBgCommentary from './img/3ds-commentary.png';
+import layoutBg from './img/DS-1P.png';
+import layoutBgCommentary from './img/DS-1P-commentary.png';
 import { ThemeProvider, Game, Category, Estimate, Timer, Player, Commentators } from './components';
 import styled from '@emotion/styled';
 import useCommentators from '../hooks/useCommentators';

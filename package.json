@@ -25,8 +25,9 @@
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.4",
     "@nodecg/react-hooks": "^1.0.3",
-    "auto-text-size": "github:hoXyy/auto-text-size",
     "lodash": "^4.17.21",
+    "nodecg": "^2.6.1",
+    "nodecg-types": "^1.9.0",
     "obs-websocket-js": "^5.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -37,6 +38,7 @@
     "@nodecg/types": "^2.1.8",
     "@types/eslint__js": "^8.42.3",
     "@types/lodash": "^4.14.195",
+    "@types/node": "^24.3.0",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^8.8.0",
@@ -106,6 +108,26 @@
       },
       {
         "file": "16x9-1p.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "4x3-3p.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "5x3-1p.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "1x1-1p.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "ds.html",
         "width": 1920,
         "height": 1080
       }

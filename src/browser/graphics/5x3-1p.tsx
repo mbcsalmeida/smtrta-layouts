@@ -1,6 +1,6 @@
 import { render } from '../render';
-import layoutBg from './img/3ds.png';
-import layoutBgCommentary from './img/3ds-commentary.png';
+import layoutBg from './img/5x3-1p.png';
+import layoutBgCommentary from './img/5x3-1p-commentary.png';
 import { ThemeProvider, Game, Category, Estimate, Timer, Player, Commentators } from './components';
 import styled from '@emotion/styled';
 import useCommentators from '../hooks/useCommentators';
@@ -21,72 +21,63 @@ const GameLayout = () => {
   return (
     <ThemeProvider>
       <LayoutContainer hasCommentators={hasCommentators}>
-        
         <Game
           style={{
-            width: '330px',
-          position: 'fixed',
-          right: '515px',
-          top: '743px',
-          fontSize: '28px',
-            overflowWrap:"break-word",
-            inlineSize: "330px",
+            position: 'fixed',
+            left: '82.5px',
+            width: '350px',
+            height: '60px',
+            top: '350px',
           }}
-          maxSize={30}
+          maxSize={32}
         />
-        
         <Category
           style={{
             position: 'fixed',
-            right: '50.5px',     
-            width: '330px',
-            height: '40px',
-            top: '760px',
-            fontSize: '50px',
-            overflowWrap:"break-word",
-            inlineSize: "330px",
+            left: '82.5px',
+            width: '350px',
+            height: '60px',
+            top: '465px',
           }}
-          maxSize={38}
+          maxSize={32}
         />
         <Estimate
           style={{
             position: 'fixed',
-            right: '515px',
-            width: '330px',
-            height: '40px',
-            top: '915px',
-            fontSize: '53px',
+            left: '82.5px',
+            width: '350px',
+            height: '60px',
+            top: '578px',
           }}
         />
         <Timer
           style={{
-            width: '330px',
             position: 'fixed',
-            right: '50.5px',
-            height: '40px',
-            top: '915px',
-            fontSize: '53px',
+            left: '82.5px',
+            width: '350px',
+            height: '60px',
+            top: '693px',
           }}
         />
         <Player
           style={{
             position: 'fixed',
-            left: '190px',
-            width: '230px',
+            left: '252px',
+            width: '260px',
             height: '40px',
-            top: '760px',
-            fontSize: '36px',
+            top: '887px',
+            fontSize: '28px',
           }}
           slot={0}
         />
         <Commentators
           style={{
             position: 'fixed',
-            left: '195px',
-            width: '230px',
+            left: '262px',
+            width: '250px',
             height: '40px',
-            top: '935px',
-            fontSize: '36px',
+            top: '954px',
+            fontSize: '28px',
           }}
         />
       </LayoutContainer>
