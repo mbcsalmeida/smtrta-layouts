@@ -12,22 +12,11 @@ export const Game = ({ maxSize, style }: GameProps) => {
   const game = useMemo(() => currentRun?.game, [currentRun]);
 
   return (
-    <div>
-      {game && (
-        <div
-          style={{
-            display: 'flex',
-            textAlign: 'center',
-            ...style,
-          }}>
-          <AutoTextSize
+    <div
             className="shadow"
-            style={{ marginLeft: 'auto', marginRight: 'auto', alignSelf: 'center' }}
-            maxFontSizePx={maxSize}>
+            style={{ marginLeft: 'auto', marginRight: 'auto', alignSelf: 'center', textAlign: "center", whiteSpace: "normal !important", ...style }}>
+            
             {game}
-          </AutoTextSize>
-        </div>
-      )}
-    </div>
+          </div>
   );
 };

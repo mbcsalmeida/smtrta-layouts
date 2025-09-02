@@ -21,31 +21,32 @@ const GameLayout = () => {
   return (
     <ThemeProvider>
       <LayoutContainer hasCommentators={hasCommentators}>
-        <div style={{
-          width: '330px',
-          height: '40px',
-        }}>
+        
         <Game
           style={{
-            position: 'fixed',
-            right: '515px',
-            top: '760px',
-            fontSize: '36px',
+            width: '330px',
+          height: '40px',
+          position: 'fixed',
+          right: '515px',
+          top: '750px',
+          fontSize: '22px',
+
+            overflowWrap:"break-word",
+            inlineSize: "330px",
           }}
-          maxSize={48}
+          maxSize={30}
         />
-        </div>
         
         <Category
           style={{
             position: 'fixed',
-            right: '50.5px',
+            right: '100.5px',
             width: '230px',
             height: '40px',
             top: '760px',
-            fontSize: '48px',
+            fontSize: '50px',
           }}
-          maxSize={32}
+          maxSize={38}
         />
         <Estimate
           style={{

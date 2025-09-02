@@ -70,7 +70,6 @@ const Intermission = () => {
   return (
     <ThemeProvider>
       <LayoutContainer>
-        <MusicText>Deja Vu - Majin Tensei 2 Spiral Nemesis</MusicText>
         <InfoContainer>
           <HeaderText $distance={128} className='shadow'>Coming Up</HeaderText>
           {currentRun && (
