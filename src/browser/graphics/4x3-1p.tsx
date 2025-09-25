@@ -21,63 +21,75 @@ const GameLayout = () => {
   return (
     <ThemeProvider>
       <LayoutContainer hasCommentators={hasCommentators}>
-        <Game
+      <Game
           style={{
             position: 'fixed',
-            left: '82.5px',
+            left: '107px',
             width: '350px',
-            height: '60px',
-            top: '350px',
+            height: '72px',
+            top: `${hasCommentators ? "334px" : "334px"}`,
+            overflowWrap: "break-word",
+            inlineSize: "325px",
+            fontSize: "30px"
           }}
           maxSize={32}
         />
         <Category
           style={{
             position: 'fixed',
-            left: '82.5px',
+            left: '107px',
             width: '350px',
-            height: '60px',
-            top: '465px',
+            height: '72px',
+            top: `${hasCommentators ? "490px" : "490px"}`,
+            overflowWrap: "break-word",
+            inlineSize: "325px",
+            fontSize: "38px"
           }}
           maxSize={32}
         />
         <Estimate
           style={{
             position: 'fixed',
-            left: '82.5px',
+            left: '92px',
             width: '350px',
             height: '60px',
-            top: '578px',
+            top: `${hasCommentators ? "634px" : "634px"}`,
+            fontSize: "55px"
           }}
         />
         <Timer
           style={{
             position: 'fixed',
-            left: '82.5px',
+            left: '92px',
             width: '350px',
             height: '60px',
-            top: '693px',
+            top: `${hasCommentators ? "794px" : "794px"}`,
+            fontSize: "55px"
           }}
         />
         <Player
           style={{
             position: 'fixed',
-            left: '252px',
+            left: '73px',
             width: '260px',
-            height: '40px',
-            top: '887px',
-            fontSize: '28px',
+            height: '60px',
+            top: `${hasCommentators ? "55px" : "130px"}`,
+            fontSize: '40px',
+            overflowWrap: "break-word",
+            inlineSize: "400px",
           }}
           slot={0}
         />
         <Commentators
           style={{
             position: 'fixed',
-            left: '262px',
+            left: '73px',
             width: '250px',
-            height: '40px',
-            top: '954px',
-            fontSize: '28px',
+            height: '60px',
+            top: '178px',
+            fontSize: '40px',
+            overflowWrap: "break-word",
+            inlineSize: "400px",
           }}
         />
       </LayoutContainer>

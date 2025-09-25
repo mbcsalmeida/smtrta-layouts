@@ -1,0 +1,12 @@
+{
+  "language": "en",
+  "customData": {
+    "run": [
+      {
+        "name": "Franchise",
+        "key": "Franchise",
+        "ignoreMarkdown": false
+      }
+    ]
+  }
+}

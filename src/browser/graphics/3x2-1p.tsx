@@ -24,60 +24,68 @@ const GameLayout = () => {
         <Game
           style={{
             position: 'fixed',
-            left: '37.5px',
+            left: '144px',
             width: '350px',
-            height: '60px',
-            top: '310px',
+            height: '72px',
+            top: `${hasCommentators ? "325px" : "305px"}`,
+            overflowWrap: "break-word",
+            inlineSize: "325px",
+            fontSize: "30px"
           }}
           maxSize={32}
         />
         <Category
           style={{
             position: 'fixed',
-            left: '37.5px',
+            left: '144px',
             width: '350px',
-            height: '60px',
-            top: '425px',
+            height: '72px',
+            top: `${hasCommentators ? "485px" : "465px"}`,
+            overflowWrap: "break-word",
+            inlineSize: "325px",
+            fontSize: "30px"
           }}
           maxSize={32}
         />
         <Estimate
           style={{
             position: 'fixed',
-            left: '37.5px',
+            left: '130px',
             width: '350px',
             height: '60px',
-            top: '538px',
+            top: `${hasCommentators ? "625px" : "605px"}`,
+            fontSize: "55px"
           }}
         />
         <Timer
           style={{
             position: 'fixed',
-            left: '37.5px',
+            left: '130px',
             width: '350px',
             height: '60px',
-            top: '653px',
+            top: `${hasCommentators ? "785px" : "765px"}`,
+            fontSize: "55px"
           }}
         />
         <Player
           style={{
             position: 'fixed',
-            left: '150px',
+            left: '165px',
             width: '260px',
             height: '40px',
-            top: '830px',
-            fontSize: '28px',
+            top: `${hasCommentators ? "50px" : "108px"}`,
+            fontSize: '40px',
           }}
           slot={0}
         />
         <Commentators
           style={{
             position: 'fixed',
-            left: '158px',
+            left: '175px',
             width: '250px',
             height: '40px',
-            top: '898px',
-            fontSize: '28px',
+            top: '178px',
+            fontSize: '40px',
           }}
         />
       </LayoutContainer>

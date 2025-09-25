@@ -5,3 +5,4 @@ export * from './estimate';
 export * from './timer';
 export * from './player';
 export * from './commentators';
+export * from './team-timer';

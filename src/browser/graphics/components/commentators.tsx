@@ -13,7 +13,7 @@ export const Commentators = ({ style }: CommentatorsProps) => {
       style={{
         display: 'flex',
         textAlign: 'center',
-        fontSize: '40px',
+        fontSize: `${commentatorsList.length > 15 ? "30px" : "40px"}`,
         justifyContent: 'center',
         ...style,
       }}

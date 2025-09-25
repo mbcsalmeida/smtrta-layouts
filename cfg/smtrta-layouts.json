@@ -1,0 +1,10 @@
+{
+  "obs": {
+    "enabled": true,
+    "url": "ws://localhost:4455",
+    "password": "HR2VdWpLthS3HxyI",
+    "scenes": {
+      "intermission": "Intermission"
+    }
+  }
+}

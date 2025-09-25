@@ -42,7 +42,7 @@ const GameLayout = () => {
             width: '330px',
             height: '40px',
             top: '760px',
-            fontSize: '50px',
+            fontSize: '40px',
             overflowWrap:"break-word",
             inlineSize: "330px",
           }}
@@ -71,10 +71,12 @@ const GameLayout = () => {
         <Player
           style={{
             position: 'fixed',
-            left: '190px',
+            left: '125px',
             width: '230px',
-            height: '40px',
-            top: '760px',
+            height: '60px',
+            top: `${hasCommentators ? "760px" : "840px"}`,
+            overflowWrap: "break-word",
+            inlineSize: "325px",
             fontSize: '36px',
           }}
           slot={0}
@@ -82,11 +84,12 @@ const GameLayout = () => {
         <Commentators
           style={{
             position: 'fixed',
-            left: '195px',
+            left: '120px',
             width: '230px',
-            height: '40px',
+            height: '60px',
             top: '935px',
-            fontSize: '36px',
+            overflowWrap:"break-word",
+            inlineSize: "325px",
           }}
         />
       </LayoutContainer>
