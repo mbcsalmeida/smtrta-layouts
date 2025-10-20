@@ -1,2 +1,2 @@
 @echo off
-nodecg start
+npx nodecg start

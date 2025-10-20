@@ -2,7 +2,7 @@ import { DashboardThemeProvider } from './components/DashboardThemeProvider';
 import { render } from '../render';
 import { useReplicant } from '@nodecg/react-hooks';
 import { Alert, Button, Stack } from '@mui/material';
-import { Timer } from '../../../../nodecg-speedcontrol/src/types/schemas/timer';
+import { Timer } from '../../../bundles/nodecg-speedcontrol/src/types/schemas/timer';
 import { useEffect, useState } from 'react';
 import useNextRun from '../hooks/useNextRun';
 import useCurrentObsScene from '../hooks/useCurrentObsScene';

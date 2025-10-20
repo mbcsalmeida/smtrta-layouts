@@ -1,6 +1,6 @@
 import { useReplicant } from '@nodecg/react-hooks';
-import { CSSProperties, useMemo } from 'react';
-import { Timer as TimerType } from '../../../../../nodecg-speedcontrol/src/types/schemas/timer';
+import { CSSProperties, useEffect } from 'react';
+import { Timer as TimerType } from '../../../../bundles/nodecg-speedcontrol/src/types/schemas/timer';
 import useCurrentRun from '../../hooks/useCurrentRun';
 
 type TimerProps = {
@@ -10,6 +10,12 @@ type TimerProps = {
 
 export const TeamTimer = ({ style, slot = 0 }: TimerProps) => {
   const [timer] = useReplicant<TimerType>('timer', { bundle: 'nodecg-speedcontrol' });
+  const currentRun = useCurrentRun();
+  const id = currentRun?.teams[slot]?.id ?? "";
+
+  useEffect(() => {
+    console.log(id)
+  }, [timer])
 
   return (
     <div
@@ -23,7 +29,7 @@ export const TeamTimer = ({ style, slot = 0 }: TimerProps) => {
       className="shadow">
       {timer && (
         <div>
-          {timer.teamFinishTimes["teamId"]?.time}
+          {timer.teamFinishTimes[id]?.time}
         </div>
       )}
     </div>

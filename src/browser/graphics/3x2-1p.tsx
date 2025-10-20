@@ -27,10 +27,10 @@ const GameLayout = () => {
             left: '144px',
             width: '350px',
             height: '72px',
-            top: `${hasCommentators ? "325px" : "305px"}`,
+            top: `${hasCommentators ? "325px" : "315px"}`,
             overflowWrap: "break-word",
             inlineSize: "325px",
-            fontSize: "30px"
+            fontSize: "24px"
           }}
           maxSize={32}
         />

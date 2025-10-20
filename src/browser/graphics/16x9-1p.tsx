@@ -30,7 +30,7 @@ const GameLayout = () => {
             top: "180px",
             overflowWrap: "break-word",
             inlineSize: "325px",
-            fontSize: "28px"
+            fontSize: "23px"
           }}
           maxSize={32}
         />
