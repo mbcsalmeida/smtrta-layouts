@@ -3,10 +3,9 @@ import useCurrentRun from '../../hooks/useCurrentRun';
 
 type CategoryProps = {
   style?: CSSProperties;
-  maxSize: number;
 };
 
-export const Category = ({ maxSize, style }: CategoryProps) => {
+export const Category = ({ style }: CategoryProps) => {
   const currentRun = useCurrentRun();
 
   return (

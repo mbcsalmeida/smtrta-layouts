@@ -3,10 +3,9 @@ import useCurrentRun from '../../hooks/useCurrentRun';
 
 type GameProps = {
   style?: CSSProperties;
-  maxSize: number;
 };
 
-export const Game = ({ maxSize, style }: GameProps) => {
+export const Game = ({ style }: GameProps) => {
   const currentRun = useCurrentRun();
   const game = useMemo(() => currentRun?.game, [currentRun]);
 
