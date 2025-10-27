@@ -35,7 +35,6 @@ const GameLayout = () => {
             inlineSize: "325px",
             fontSize: "30px"
           }}
-          maxSize={32}
         />
         <Category
           style={{
@@ -48,7 +47,6 @@ const GameLayout = () => {
             inlineSize: "325px",
             fontSize: "38px"
           }}
-          maxSize={32}
         />
         <Estimate
           style={{

@@ -23,7 +23,6 @@ const GameLayout = () => {
             height: '60px',
             top: '265px',
           }}
-          maxSize={32}
         />
         <Category
           style={{
@@ -33,7 +32,6 @@ const GameLayout = () => {
             height: '60px',
             top: '387px',
           }}
-          maxSize={32}
         />
         <Timer
           style={{

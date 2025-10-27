@@ -32,7 +32,6 @@ const GameLayout = () => {
             overflowWrap:"break-word",
             inlineSize: "330px",
           }}
-          maxSize={30}
         />
         
         <Category
@@ -46,7 +45,6 @@ const GameLayout = () => {
             overflowWrap:"break-word",
             inlineSize: "330px",
           }}
-          maxSize={38}
         />
         <Estimate
           style={{
