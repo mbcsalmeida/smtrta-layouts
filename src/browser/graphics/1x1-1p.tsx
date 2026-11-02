@@ -21,7 +21,7 @@ const GameLayout = () => {
   return (
     <ThemeProvider>
       <LayoutContainer hasCommentators={hasCommentators}>
-      <Game
+        <Game
           style={{
             position: 'fixed',
             left: '240px',

@@ -49,7 +49,7 @@ const HeaderText = styled.h2<{ $distance: number }>`
   font-size: 36px;
 `
 
-function MultipleRunners(props: { teams: Array<{ players: Array<{ name: string }> }> }){
+function MultipleRunners(props: { teams: Array<{ players: Array<{ name: string }> }> }) {
   const teams = props.teams;
   const names = teams.map((team) => team.players[0]?.name || 'Unknown').filter(Boolean);
   return names.join(" vs ");
@@ -70,9 +70,9 @@ const Intermission = () => {
                 className="shadow"
                 style={{
                   fontSize: '40px',
-            overflowWrap:"break-word",
-            inlineSize: "600px",
-            marginTop: "10px"
+                  overflowWrap: "break-word",
+                  inlineSize: "600px",
+                  marginTop: "10px"
                 }}>
                 {currentRun.game}
               </div>
@@ -85,31 +85,31 @@ const Intermission = () => {
                 {currentRun.category}
               </span>
               <span
-                  className="shadow"
-                  style={{
-                    fontSize: "30px"
-                  }}
-                >
-                  {(currentRun.teams.length ?? 1) > 1 ?
-                    <MultipleRunners teams={currentRun.teams}/> : 
-                    currentRun.teams[0]?.players[0]?.name
+                className="shadow"
+                style={{
+                  fontSize: "30px"
+                }}
+              >
+                {(currentRun.teams.length ?? 1) > 1 ?
+                  <MultipleRunners teams={currentRun.teams} /> :
+                  currentRun.teams[0]?.players[0]?.name
                 }
-                </span>
+              </span>
             </IntermissionCurrentRunInfo>
           )}
           {nextRun && (
             <>
               <HeaderText $distance={460} className='shadow'>On Deck</HeaderText>
               <IntermissionNextRunInfo>
-              <div
-                className="shadow"
-                style={{
-                  fontSize: '34px',
-            overflowWrap:"break-word",
-            inlineSize: "600px",
-            marginTop: "10px"
-                }}>
-                
+                <div
+                  className="shadow"
+                  style={{
+                    fontSize: '34px',
+                    overflowWrap: "break-word",
+                    inlineSize: "600px",
+                    marginTop: "10px"
+                  }}>
+
                   {nextRun.game}
                 </div>
                 <span
@@ -127,9 +127,9 @@ const Intermission = () => {
                   }}
                 >
                   {(nextRun.teams.length ?? 1) > 1 ?
-                    <MultipleRunners teams={nextRun.teams}/> : 
+                    <MultipleRunners teams={nextRun.teams} /> :
                     nextRun.teams[0]?.players[0]?.name
-                }
+                  }
                 </span>
               </IntermissionNextRunInfo>
             </>

@@ -1,5 +1,6 @@
 import { Global, css } from '@emotion/react';
 import { type ReactNode, Fragment } from 'react';
+import "../../styles.css";
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   return (

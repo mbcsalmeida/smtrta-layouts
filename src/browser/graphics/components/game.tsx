@@ -11,10 +11,10 @@ export const Game = ({ style }: GameProps) => {
 
   return (
     <div
-            className="shadow"
-            style={{ marginLeft: 'auto', marginRight: 'auto', alignSelf: 'center', textAlign: "center", whiteSpace: "normal !important", ...style }}>
-            
-            {game}
-          </div>
+      className="shadow"
+      style={{ marginLeft: 'auto', marginRight: 'auto', alignSelf: 'center', textAlign: "center", whiteSpace: "normal !important", ...style }}>
+
+      {game}
+    </div>
   );
 };

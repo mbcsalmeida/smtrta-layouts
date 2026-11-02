@@ -40,7 +40,16 @@ export const App = () => {
           disabled={disableChange || !nextRun}
           onClick={() => {
             if (nextRun) {
-              nodecg.sendMessage('switchToIntermission');
+              console.log('Attempting to switch to intermission scene...', {
+                currentScene: currentObsScene,
+                intermissionScene: intermissionSceneName,
+                nextRun
+              });
+              nodecg.sendMessage('switchToIntermission').then(() => {
+                console.log('Message sent successfully');
+              }).catch((err: string) => {
+                console.error('Failed to send message:', err);
+              });
             }
           }}>
           <span>

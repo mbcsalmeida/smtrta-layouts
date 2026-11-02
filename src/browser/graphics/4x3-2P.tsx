@@ -24,7 +24,7 @@ const GameLayout = () => {
   return (
     <ThemeProvider>
       <LayoutContainer>
-      <Game
+        <Game
           style={{
             position: 'fixed',
             left: '114px',
@@ -107,25 +107,25 @@ const GameLayout = () => {
           }}
         />
         <TeamTimer style={{
-            position: 'fixed',
-            left: '572px',
-            width: '250px',
-            height: '60px',
-            top: '563px',
-            fontSize: '40px',
-            overflowWrap: "break-word",
-            inlineSize: "340px",
-          }} slot={0} />
-          <TeamTimer style={{
-            position: 'fixed',
-            right: '16px',
-            width: '250px',
-            height: '60px',
-            top: '563px',
-            fontSize: '40px',
-            overflowWrap: "break-word",
-            inlineSize: "340px",
-          }} slot={1} />
+          position: 'fixed',
+          left: '572px',
+          width: '250px',
+          height: '60px',
+          top: '563px',
+          fontSize: '40px',
+          overflowWrap: "break-word",
+          inlineSize: "340px",
+        }} slot={0} />
+        <TeamTimer style={{
+          position: 'fixed',
+          right: '16px',
+          width: '250px',
+          height: '60px',
+          top: '563px',
+          fontSize: '40px',
+          overflowWrap: "break-word",
+          inlineSize: "340px",
+        }} slot={1} />
       </LayoutContainer>
     </ThemeProvider>
   );

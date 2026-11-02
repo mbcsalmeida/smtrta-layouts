@@ -19,19 +19,23 @@
     "watch:extension": "tsc -b tsconfig.extension.json -w --preserveWatchOutput"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
+    "@emotion/styled": "^11.14.1",
     "@fontsource/roboto": "^5.0.3",
-    "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.13.4",
+    "@mui/icons-material": "^9.0.0",
+    "@mui/material": "^9.0.0",
     "@nodecg/react-hooks": "^1.0.3",
-    "lodash": "^4.17.21",
+    "@tailwindcss/vite": "^4.1.12",
+    "auto-text-size": "github:hoXyy/auto-text-size",
+    "humanize-duration": "^3.33.2",
     "nodecg": "^2.6.1",
     "nodecg-types": "^1.9.0",
     "obs-websocket-js": "^5.0.6",
     "react": "^18.2.0",
+    "react-custom-roulette": "^1.4.1",
     "react-dom": "^18.2.0",
-    "styled-components": "6.0.0-rc.3"
+    "react-icons": "^5.6.0",
+    "react-slot-counter": "^3.3.3",
+    "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
     "@eslint/js": "^9.12.0",
@@ -78,12 +82,6 @@
         "name": "commentators",
         "title": "Commentators",
         "width": 3
-      },
-      {
-        "file": "text-size-editor.html",
-        "name": "text-size-editor",
-        "title": "Text Size Editor",
-        "width": 5
       }
     ],
     "graphics": [

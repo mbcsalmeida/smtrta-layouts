@@ -1,98 +1,79 @@
-import { render } from '../render';
-import layoutBg from './img/DS-1P.png';
-import layoutBgCommentary from './img/DS-1P-commentary.png';
-import { ThemeProvider, Game, Category, Estimate, Timer, Player, Commentators } from './components';
-import styled from '@emotion/styled';
-import useCommentators from '../hooks/useCommentators';
-import { useMemo } from 'react';
+import { render } from "../render";
+import { ThemeProvider } from "./components/theme-provider";
+import useCurrentRun from "../hooks/useCurrentRun";
+import useCommentators from "../hooks/useCommentators";
+import Logo from "./img/rta2026.png";
+import { AutoTextSize } from "auto-text-size";
+import { Timer } from "./components/timer";
+import Mic from "../graphics/img/icons/mic.png";
+import Runner from "../graphics/img/icons/runner.png";
+import { RunnerText } from "./components/runner-text";
 
-const LayoutContainer = styled.div<{ hasCommentators: boolean }>`
-  background-image: url(${(props) => (props.hasCommentators ? layoutBgCommentary : layoutBg)});
-  margin: 0;
-  padding: 0;
-  width: 1920px;
-  height: 1080px;
-`;
 
-const GameLayout = () => {
-  const commentators = useCommentators();
-  const hasCommentators = useMemo(() => commentators.length > 0, [commentators]);
 
-  return (
-    <ThemeProvider>
-      <LayoutContainer hasCommentators={hasCommentators}>
-        
-        <Game
-          style={{
-            width: '330px',
-          position: 'fixed',
-          right: '515px',
-          top: '743px',
-          fontSize: '28px',
-            overflowWrap:"break-word",
-            inlineSize: "330px",
-          }}
-        />
-        
-        <Category
-          style={{
-            position: 'fixed',
-            right: '50.5px',     
-            width: '330px',
-            height: '40px',
-            top: '760px',
-            fontSize: '40px',
-            overflowWrap:"break-word",
-            inlineSize: "330px",
-          }}
-        />
-        <Estimate
-          style={{
-            position: 'fixed',
-            right: '515px',
-            width: '330px',
-            height: '40px',
-            top: '915px',
-            fontSize: '53px',
-          }}
-        />
-        <Timer
-          style={{
-            width: '330px',
-            position: 'fixed',
-            right: '50.5px',
-            height: '40px',
-            top: '915px',
-            fontSize: '53px',
-          }}
-        />
-        <Player
-          style={{
-            position: 'fixed',
-            left: '125px',
-            width: '230px',
-            height: '60px',
-            top: `${hasCommentators ? "760px" : "840px"}`,
-            overflowWrap: "break-word",
-            inlineSize: "325px",
-            fontSize: '36px',
-          }}
-          slot={0}
-        />
-        <Commentators
-          style={{
-            position: 'fixed',
-            left: '120px',
-            width: '230px',
-            height: '60px',
-            top: '935px',
-            overflowWrap:"break-word",
-            inlineSize: "325px",
-          }}
-        />
-      </LayoutContainer>
-    </ThemeProvider>
-  );
-};
+const SceneDS = () => {
+const run = useCurrentRun();
+const commentators = useCommentators();
+const player = run?.teams[0]?.players[0];
 
-render(<GameLayout />);
+return(
+<ThemeProvider>
+    <div className="w-full h-[1080px] bg-intermission flex flex-col bg-red-950/50 ">
+        <div className="w-full h-[600px] flex items-center z-1 mt-5 justify-around">
+            <div className="w-[800px] h-full">
+                <div className="aspect-4/3 bg-black w-full border-main" />
+            </div>
+            <div className="w-[800px] h-full">
+                <div className="aspect-4/3 bg-black w-full border-main" />
+            </div>
+        </div>
+
+        <div className="w-full h-[400px] flex flex-row justify-around">
+            <div className="justify-center items-center self-center flex flex-col gap-8">
+                <div className="border-main w-[350px] auto-text-size-override h-[80px] bg-gray-800/90 relative">
+                    <img src={Runner} width={70} className="absolute left-[-30px] top-[-20px] "/>
+                    <RunnerText twitch={player?.social.twitch} name={player?.name ?? ""} pronouns={player?.pronouns} />
+                </div>
+                {commentators && commentators.length > 0 &&
+                    (
+                    commentators.map((comm) => (
+                    <div key={comm.id} className="border-main w-[320px]  h-[70px] bg-gray-800/90 relative">
+                        <img src={Mic} width={60} className={`absolute left-[-30px] top-[-20px] rotate-12`}/>
+                        <p className="right-1 top-0 absolute text-xs">{comm.pronouns}</p>
+                        <RunnerText twitch={comm.twitch} name={comm.name} pronouns={comm.pronouns} />
+                    </div>
+                    ))
+                    )
+                    }
+            </div>
+            <img width={500} src={Logo} className="object-contain" />
+            <div className="flex flex-col justify-evenly">
+                <div className="border-main w-[400px] auto-text-size-override h-[100px] p-1 bg-gray-800/90 ">
+                    <AutoTextSize mode="box" minFontSizePx={18} maxFontSizePx={60}>
+                        {run?.game}
+                    </AutoTextSize>
+                </div>
+                <div className="border-main w-[400px] h-[100px] auto-text-size-override mr-0 ml-auto p-2 bg-gray-800/90 ">
+                    <AutoTextSize mode="box" minFontSizePx={18} maxFontSizePx={60}>
+                        {run?.category}
+                    </AutoTextSize>
+                </div>
+            </div>
+            <div className="flex flex-col justify-evenly">
+                <div className="border-main w-[350px] auto-text-size-override h-[100px] bg-gray-800/90 ">
+                    <AutoTextSize mode="box" minFontSizePx={18} maxFontSizePx={100}>
+                        {run?.estimate}
+                    </AutoTextSize>
+                </div>
+                <div className="border-main w-[350px] auto-text-size-override mr-0 ml-auto h-[100px] bg-gray-800/90 ">
+                    <AutoTextSize mode="box" minFontSizePx={18} maxFontSizePx={40}>
+                        <Timer />
+                    </AutoTextSize>
+                </div>
+            </div>
+        </div>
+    </div>
+</ThemeProvider>
+)}
+
+render(<SceneDS />)
