@@ -1,12 +1,16 @@
 import { render } from '../render';
-import intermissionBg from './img/intermission.png';
+import intermissionBg from './img/backgrounds/bg-intermission.png';
 import useCurrentRun from '../hooks/useCurrentRun';
 import styled from '@emotion/styled';
 import { ThemeProvider } from './components';
 import useNextRun from '../hooks/useNextRun';
+import Logo from "./img/rta2026.png";
 
 const LayoutContainer = styled.div`
   background-image: url(${intermissionBg});
+  background-blend-mode: overlay;
+  background-size:cover;
+  background-position: center; 
   margin: 0;
   padding: 0;
   width: 1920px;
@@ -58,10 +62,15 @@ function MultipleRunners(props: { teams: Array<{ players: Array<{ name: string }
 const Intermission = () => {
   const currentRun = useCurrentRun();
   const nextRun = useNextRun();
+  
 
   return (
     <ThemeProvider>
       <LayoutContainer>
+        <div className='w-[1186px] absolute top-0 left-0'>
+            <img width={900} src={Logo} className="m-auto mt-[100px]" />
+            <div className='w-[900px] h-[60px] m-auto mt-5 bg-[#4b9d99]/80 rounded-2xl shadow-amber-50 shadow-md ring-2 ring-sky-200'></div>
+        </div>
         <InfoContainer>
           <HeaderText $distance={128} className='shadow'>Coming Up</HeaderText>
           {currentRun && (
@@ -90,7 +99,7 @@ const Intermission = () => {
                   fontSize: "30px"
                 }}
               >
-                {(currentRun.teams.length ?? 1) > 1 ?
+                by {(currentRun.teams.length ?? 1) > 1 ?
                   <MultipleRunners teams={currentRun.teams} /> :
                   currentRun.teams[0]?.players[0]?.name
                 }
@@ -126,7 +135,7 @@ const Intermission = () => {
                     fontSize: "30px"
                   }}
                 >
-                  {(nextRun.teams.length ?? 1) > 1 ?
+                  by {(nextRun.teams.length ?? 1) > 1 ?
                     <MultipleRunners teams={nextRun.teams} /> :
                     nextRun.teams[0]?.players[0]?.name
                   }

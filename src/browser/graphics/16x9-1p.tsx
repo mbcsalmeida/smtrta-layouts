@@ -15,10 +15,11 @@ const Scene16x9 = () => {
 const run = useCurrentRun();
 const commentators = useCommentators();
 const player = run?.teams[0]?.players[0];
+const background = run?.customData["background"] ?? "1";
 
 return(
 <ThemeProvider>
-    <div className="w-full h-[1080px] bg-intermission flex flex-row bg-red-950/50 ">
+    <div className={`w-full h-[1080px] bg-${background} flex flex-row bg-red-950/50 `}>
         <div className="w-[460px] h-full flex flex-col gap-8">
             <div>
                 <img src={Logo} className="m-auto mt-10 mb-10"  />

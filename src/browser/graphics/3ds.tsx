@@ -15,10 +15,11 @@ const Scene3DS = () => {
 const run = useCurrentRun();
 const commentators = useCommentators();
 const player = run?.teams[0]?.players[0];
+const background = run?.customData["background"] ?? "1";
 
 return(
 <ThemeProvider>
-    <div className="w-full h-[1080px] bg-intermission flex flex-col bg-red-950/50 ">
+    <div className={`w-full h-[1080px] bg-${background} flex flex-row bg-red-950/50 `}>
         <div className="w-full h-[600px] flex items-center z-1 mt-5 justify-around">
             <div className="w-[935px] h-full">
                 <div className="aspect-5/3 bg-black w-full border-main" />
