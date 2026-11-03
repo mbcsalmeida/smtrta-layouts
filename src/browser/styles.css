@@ -83,3 +83,46 @@
   max-height: 600px !important;
   aspect-ratio: 1 / 1 !important;
 }
+
+.menu-box {
+  position: relative;
+  padding: 4px 22px; 
+  text-align: center;
+  font-family: "DotGothic16", "MS Gothic", monospace;
+  letter-spacing: 0.2em;
+  color: #b8b8e0;
+
+  background: #001028;            /* flat dark blue */
+  border-top: 6px solid #a8a8b4;
+  border-bottom: 3px solid #5c5c6a;
+}
+
+/* Thick ridged side borders */
+.menu-box::before,
+.menu-box::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  width: 10px;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #c4c4cc 0px,
+      #c4c4cc 2px,
+      #284848 2px,
+      #608080 3px,
+      #284848 3px,
+      #608080 4px
+    );
+}
+
+.menu-box::before {
+  left: 0;
+  box-shadow: inset -2px 0 0 #3c3c48;   /* dark edge facing the inside */
+}
+
+.menu-box::after {
+  right: 0;
+  box-shadow: inset 2px 0 0 #3c3c48;
+}
