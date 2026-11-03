@@ -19,7 +19,7 @@ const background = run?.customData["background"] ?? "1";
 
 return(
 <ThemeProvider>
-    <div className={`w-full h-[1080px] bg-${background} flex flex-row bg-red-950/50 `}>
+    <div className={`w-full h-[1080px] bg-${background} flex flex-row bg-red-950/30 `}>
         <div className="w-[460px] h-full flex flex-col  items-center ">
             <div>
                 <img src={Logo} className="m-auto mt-10 mb-10"  />
@@ -45,14 +45,14 @@ return(
                 </AutoTextSize>
             </div>
             <div className="justify-center items-center self-center flex flex-col">
-                <div className="menu-box w-[300px] h-[70px] mt-10 bg-gray-800/90 relative">
+                <div className="menu-box bottom  w-[300px] h-[70px] mt-10 bg-gray-800/90 relative">
                     <img src={Runner} width={50} className="absolute left-[-20px] top-[-20px] "/>
                     <RunnerText twitch={player?.social.twitch} name={player?.name ?? ""} pronouns={player?.pronouns} />
                 </div>
                 {commentators && commentators.length > 0 &&
                     (
                     commentators.map((comm) => (
-                    <div key={comm.id} className="menu-box w-[300px] h-[70px] relative">
+                    <div key={comm.id} className="menu-box bottom  w-[300px] h-[70px] relative">
                         <img src={Mic} width={55} className={`absolute left-[-30px] top-[-20px] rotate-12`}/>
                         <p className="right-1 top-0 absolute text-xs">{comm.pronouns}</p>
                         <RunnerText twitch={comm.twitch} name={comm.name} pronouns={comm.pronouns} />

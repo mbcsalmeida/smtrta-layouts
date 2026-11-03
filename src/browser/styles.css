@@ -97,6 +97,10 @@
   border-bottom: 3px solid #5c5c6a;
 }
 
+.menu-box.bottom {
+  border-bottom: 6px solid #5c5c6a;
+}
+
 /* Thick ridged side borders */
 .menu-box::before,
 .menu-box::after {
