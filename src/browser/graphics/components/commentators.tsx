@@ -18,7 +18,7 @@ export const Commentators = ({ style }: CommentatorsProps) => {
         ...style,
       }}
       className="shadow">
-      <div>{commentatorsList}</div>
+      <div>Commentator</div>
     </div>
   );
 };

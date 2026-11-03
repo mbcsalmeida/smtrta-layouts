@@ -13,7 +13,7 @@
     "prettify": "prettier --write src/browser src/extension",
     "prebuild": "npm run clean",
     "schema-types": "nodecg schema-types -o src/types/generated",
-    "start": "node ../..",
+    "start": "npx nodecg start",
     "watch": "run-p watch:*",
     "watch:browser": "vite",
     "watch:extension": "tsc -b tsconfig.extension.json -w --preserveWatchOutput"

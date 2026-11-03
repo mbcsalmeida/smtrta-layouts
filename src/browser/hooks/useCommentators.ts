@@ -1,9 +1,10 @@
-import { useReplicant } from '@nodecg/react-hooks';
+import { useReplicant } from "@nodecg/react-hooks";
+import { Commentator } from "../../types/custom/commentators";
 
 function useCommentators() {
-  const [commentators] = useReplicant<string>('commentators');
+  const [commentators] = useReplicant<Commentator[]>("commentators");
 
-  return commentators ?? '';
+  return commentators ?? [];
 }
 
 export default useCommentators;
