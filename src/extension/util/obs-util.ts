@@ -80,4 +80,17 @@ export class OBSUtility extends obsWebsocketJs {
       await this.call('SetStudioModeEnabled', { studioModeEnabled: true });
     }
   }
+
+  async refreshTwitchPlayer() {
+    try {
+      await this.call('PressInputPropertiesButton', {
+          inputName: "Stream",
+          propertyName: 'refreshnocache'
+      });
+
+      nodecg.log.info(`Refreshed browser source: "Stream"`);
+    } catch (error) {
+      nodecg.log.error('Failed to refresh Twitch player:', error);
+    }
+  }
 }

@@ -20,4 +20,8 @@ if (config.enabled) {
     nodecg.sendMessageToBundle('changeToNextRun', 'nodecg-speedcontrol');
     nodecg.sendMessageToBundle('playbackStart', 'nodecg-foobar2000-controller');
   });
+
+  nodecg.listenFor('refreshPlayerCommand', async () => {
+    await obs.refreshTwitchPlayer();
+  });
 }

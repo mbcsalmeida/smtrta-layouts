@@ -82,6 +82,12 @@
         "name": "commentators",
         "title": "Commentators",
         "width": 3
+      },
+      {
+        "file": "refresh-twitch-player.html",
+        "name": "refresh-twitch-player",
+        "title": "Refresh Twitch Player",
+        "width": 2
       }
     ],
     "graphics": [
