@@ -3,7 +3,6 @@ import { render } from '../render';
 import { useReplicant } from '@nodecg/react-hooks';
 import { Alert, Button, Stack } from '@mui/material';
 import { Timer } from '../../../bundles/nodecg-speedcontrol/src/types/schemas/timer';
-import { useEffect, useState } from 'react';
 import useNextRun from '../hooks/useNextRun';
 import useCurrentObsScene from '../hooks/useCurrentObsScene';
 
@@ -14,23 +13,10 @@ export const App = () => {
   const [timer] = useReplicant<Timer | undefined>('timer', {
     bundle: 'nodecg-speedcontrol',
   });
-  const [nextRunGameName, setNextRunGameName] = useState<string>('');
   const nextRun = useNextRun();
 
-  const getNextRunGameName = () => {
-    if (nextRun && nextRun.game) {
-      return `${nextRun.game.slice(0, 35)}${nextRun.game.length > 35 ? '...' : ''}`;
-    }
-    return '(Run with no name)';
-  };
-
-  useEffect(() => {
-    setNextRunGameName(getNextRunGameName());
-  }, [nextRun]);
-
   const disableChange =
-    (timer && ['running', 'paused'].includes(timer.state)) ||
-    currentObsScene === intermissionSceneName;
+    (timer && ['running', 'paused'].includes(timer.state));
 
   return (
     <DashboardThemeProvider>
@@ -53,10 +39,24 @@ export const App = () => {
             }
           }}>
           <span>
-            {nextRun ? <>{nextRunGameName}</> : nextRun ? <>No next runs</> : <>No added runs</>}
+            RUN ENDED - To Intermission, Advances Game
           </span>
         </Button>
-        {disableChange && <Alert severity="info">You cannot change the game right now.</Alert>}
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => {
+            nodecg.sendMessage('transitionOnOBS').then(() => {
+                console.log('Message sent successfully');
+              }).catch((err: string) => {
+                console.error('Failed to send message:', err);
+              });
+          }}>
+          <span>
+            General Transition
+          </span>
+        </Button>
+        {disableChange && <Alert severity="info">You cannot advance the game while the run is ongoing.</Alert>}
       </Stack>
     </DashboardThemeProvider>
   );

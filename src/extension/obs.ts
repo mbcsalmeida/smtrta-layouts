@@ -24,4 +24,9 @@ if (config.enabled) {
   nodecg.listenFor('refreshPlayerCommand', async () => {
     await obs.refreshTwitchPlayer();
   });
+
+  nodecg.listenFor('transitionOnOBS', async () => {
+    nodecg.sendMessageToBundle('playbackPlay', 'nodecg-foobar2000-controller');
+    await obs.transitionOnOBS();
+  });
 }

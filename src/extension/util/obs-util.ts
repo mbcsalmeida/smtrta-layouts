@@ -67,6 +67,7 @@ export class OBSUtility extends obsWebsocketJs {
     try {
       await this.changeScene(this.config.scenes?.intermission ?? 'Intermission');
       await this.enableStudioMode();
+      await this.muteStream();
       commentators.value = [];
     } catch (err) {
       this.log.warn(`Error switching to intermission ${err}`);
@@ -91,6 +92,53 @@ export class OBSUtility extends obsWebsocketJs {
       nodecg.log.info(`Refreshed browser source: "Stream"`);
     } catch (error) {
       nodecg.log.error('Failed to refresh Twitch player:', error);
+    }
+  }
+
+  async muteStream(){
+    try{
+      await this.call('SetInputMute', {
+          inputName: 'Stream',
+          inputMuted: true
+      });
+    } catch (error) {
+        nodecg.log.error('Muting stream failed:', error);
+    }
+  }
+
+  async toggleMuteStream(){
+    try{
+      const { inputMuted } = await this.call('GetInputMute', {
+          inputName: 'Stream'
+      });
+
+      await this.call('SetInputMute', {
+          inputName: 'Stream',
+          inputMuted: !inputMuted
+      });
+    } catch (error) {
+        nodecg.log.error('Muting stream failed:', error);
+    }
+  }
+
+  async transitionOnOBS() {
+    try {
+      const studioMode = await this.call('GetStudioModeEnabled');
+
+      // Enable Studio Mode if it isn't already enabled.
+      if (!studioMode.studioModeEnabled) {
+          await this.changeScene(this.config.scenes?.intermission ?? 'Intermission');
+      }
+
+      // Transition Preview to Program.
+      await this.call('TriggerStudioModeTransition');
+
+      this.toggleMuteStream();
+
+      nodecg.log.info(`Scene switched and Stream audio is adjusted`);
+
+    } catch (error) {
+        nodecg.log.error('Scene switch failed:', error);
     }
   }
 }
